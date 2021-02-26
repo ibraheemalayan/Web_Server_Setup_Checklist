@@ -1,5 +1,7 @@
 WebsiteName="name" # used only for the website folder name in /var/www and as the name of the apache config file (doesn't affect functionality)
-DomainName="example.com"
+DomainName="mysite.example.com" # Fully Qualified Domain Name
+HostName="mysite" # name of the server
+PublicIP="3.3.3.3"
 
 LimitRequestBody=512000 # max request size in bytes
 Processes=2
@@ -16,7 +18,3 @@ StaticDirPath="some path"
 RobotsFilePath=""
 FaviconPath=""
 
-
-# sed -i 's/search_string/replace_string/' filename
-
-mv site.wsgi /var/www/$WebsiteName/$WebsiteName.wsgi
