@@ -11,12 +11,13 @@ if [ `whoami` != 'root' ]
     exit
 fi
 
-if [ -z "$1" ]
-  then
-    printf "${RED}[!]${NC}No argument supplied, usage : ${HIGHLIGHT}sudo bash setup.sh {website_name}${NC}"
-fi
+# if [ -z "$1" ]
+#   then
+#     printf "${RED}[!]${NC}No argument supplied, usage : ${HIGHLIGHT}sudo bash setup.sh {website_name}${NC}"
+# fi
 
-website_name=$1
+# Get parameters from paras file as variables
+source parameters.sh
 
 printf "${RED}[-]${NC} -- ${HIGHLIGHT}updating system ...${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}apt update${NC}"
@@ -49,5 +50,9 @@ printf "${RED}[<>]${NC} -- ${HIGHLIGHT}mkdir /var/www/${WebsiteName}/static${NC}
 mkdir /var/www/${WebsiteName}
 mkdir /var/www/${WebsiteName}/static
 
-# TODO after fill paras
-cp site.wsgi /var/www/$WebsiteName/$WebsiteName.wsgi
+# Create and copy configuration files
+source fill_configs.sh
+
+sudo a2ensite ${WebsiteName}
+
+sudo systemctl restart apache2.service
