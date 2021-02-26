@@ -44,7 +44,10 @@ printf "${RED}[<>]${NC} -- ${HIGHLIGHT}systemctl restart apache2${NC}"
 systemctl restart apache2
 
 printf "${RED}[-]${NC} -- ${HIGHLIGHT}making website directories...${NC}"
-printf "${RED}[<>]${NC} -- ${HIGHLIGHT}mkdir /var/www/$website_name${NC}"
-printf "${RED}[<>]${NC} -- ${HIGHLIGHT}mkdir /var/www/$website_name/static${NC}"
-mkdir /var/www/$website_name
-mkdir /var/www/$website_name/static
+printf "${RED}[<>]${NC} -- ${HIGHLIGHT}mkdir /var/www/${WebsiteName}${NC}"
+printf "${RED}[<>]${NC} -- ${HIGHLIGHT}mkdir /var/www/${WebsiteName}/static${NC}"
+mkdir /var/www/${WebsiteName}
+mkdir /var/www/${WebsiteName}/static
+
+# TODO after fill paras
+cp site.wsgi /var/www/$WebsiteName/$WebsiteName.wsgi
