@@ -1,7 +1,7 @@
 import sys
 
-sys.path.insert(0, '/path/to/the/application')
+sys.path.insert(0, '{{{PathToApp}}}')
 
-from yourapplication import create_app
+from {{{app_factory_name}}} import create_app
 
 application = create_app()
