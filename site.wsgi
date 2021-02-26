@@ -2,6 +2,6 @@ import sys
 
 sys.path.insert(0, '{{{PathToApp}}}')
 
-from {{{app_factory_name}}} import create_app
+from {{{AppFactoryScriptName}}} import create_app
 
 application = create_app()
