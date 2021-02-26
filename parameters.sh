@@ -5,7 +5,9 @@ LimitRequestBody=512000 # max request size in bytes
 Processes=2
 Threads=5
 
-PathToApp="/home/"
+# AppFactoryScript is the script that contains the create_app() method that returns Flask App object
+PathToApp="/home/user/src/" # the directory that contains the AppFactoryScript
+AppFactoryScriptName="init.py" # Name of the AppFactoryScript file
 
 # without trailing slash !!!
 # write it like this /home/user/static not like /home/user/static/
