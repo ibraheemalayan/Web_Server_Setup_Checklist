@@ -39,14 +39,9 @@ printf "${RED}[-]${NC} -- ${HIGHLIGHT}enabling mod_wsgi for apache ...\n${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}a2enmod wsgi\n${NC}"
 a2enmod wsgi
 
-
 printf "${RED}[-]${NC} -- ${HIGHLIGHT}enabling apache service...\n${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}systemctl enable apache2\n${NC}"
 systemctl enable apache2
-
-printf "${RED}[-]${NC} -- ${HIGHLIGHT}restarting apache service...\n${NC}"
-printf "${RED}[<>]${NC} -- ${HIGHLIGHT}systemctl restart apache2\n${NC}"
-systemctl restart apache2
 
 printf "${RED}[-]${NC} -- ${HIGHLIGHT}making website directories...\n${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}mkdir /var/www/${WebsiteName}\n${NC}"
@@ -61,8 +56,8 @@ source fill_configs.sh
 
 printf "${RED}[-]${NC} -- ${HIGHLIGHT}Enabling ${WebsiteName} apache website\n${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}sudo a2ensite ${WebsiteName}\n${NC}"
-sudo a2ensite ${WebsiteName}
+a2ensite ${WebsiteName}
 
 printf "${RED}[-]${NC} -- ${HIGHLIGHT}Restarting apache ...\n${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}sudo systemctl restart apache2.service\n${NC}"
-sudo systemctl restart apache2.service
+systemctl restart apache2.service
