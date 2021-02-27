@@ -35,5 +35,6 @@ sed -i "s|{{{ErorrHandler}}}|${error404handle}|g" apache_site.conf
 cp apache_site.conf /etc/apache2/sites-available/${WebsiteName}.conf
 
 sed -i "s|{{{AppFactoryScriptName}}}|${AppFactoryScriptName}|g" site.wsgi
+sed -i "s|{{{PathToApp}}}|${PathToApp}|g" site.wsgi
 
 cp site.wsgi /var/www/${WebsiteName}/${WebsiteName}.wsgi
