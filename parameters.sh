@@ -20,3 +20,5 @@ StaticDirPath="/home/ibraheem/src/static"
 RobotsFilePath="/home/ibraheem/src/robots.txt"
 FaviconPath="/home/ibraheem/src/favicon.ico"
 
+# the path to the custom 404 html page file
+Custom404PagePath="" # keep empty to use default apache page
