@@ -2,7 +2,7 @@
 
 source parameters.sh
 
-PythonHome=PathToApp
+PythonHome=$PathToApp
 
 sed -i "s|{{{WebsiteName}}}|${WebsiteName}|g" apache_site.conf
 sed -i "s|{{{DomainName}}}|${DomainName}|g" apache_site.conf
