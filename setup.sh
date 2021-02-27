@@ -31,6 +31,10 @@ printf "${RED}[-]${NC} -- ${HIGHLIGHT}installing required apt packages ...${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}apt install -y apache2 python3-pip libapache2-mod-wsgi-py3 python3-dev${NC}"
 apt install -y apache2 python3-pip libapache2-mod-wsgi-py3 python3-dev
 
+printf "${RED}[-]${NC} -- ${HIGHLIGHT}installing required pip packages ...${NC}"
+printf "${RED}[<>]${NC} -- ${HIGHLIGHT}pip install -r ${PathToRequirements}${NC}"
+pip install -r ${PathToRequirements}
+
 printf "${RED}[-]${NC} -- ${HIGHLIGHT}enabling mod_wsgi for apache ...${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}a2enmod wsgi${NC}"
 a2enmod wsgi
