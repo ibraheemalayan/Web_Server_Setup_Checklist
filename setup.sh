@@ -51,8 +51,14 @@ mkdir /var/www/${WebsiteName}
 mkdir /var/www/${WebsiteName}/static
 
 # Create and copy configuration files
+printf "${RED}[-]${NC} -- ${HIGHLIGHT}Creating config files ...${NC}"
+printf "${RED}[<>]${NC} -- ${HIGHLIGHT}source fill_configs.sh${NC}"
 source fill_configs.sh
 
+printf "${RED}[-]${NC} -- ${HIGHLIGHT}Enabling ${WebsiteName} apache website${NC}"
+printf "${RED}[<>]${NC} -- ${HIGHLIGHT}sudo a2ensite ${WebsiteName}${NC}"
 sudo a2ensite ${WebsiteName}
 
+printf "${RED}[-]${NC} -- ${HIGHLIGHT}Restarting apache ...${NC}"
+printf "${RED}[<>]${NC} -- ${HIGHLIGHT}sudo systemctl restart apache2.service${NC}"
 sudo systemctl restart apache2.service
