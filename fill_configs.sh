@@ -12,6 +12,18 @@ sed -i "s|{{{RobotsFilePath}}}|${RobotsFilePath}|g" apache_site.conf
 sed -i "s|{{{FaviconPath}}}|${FaviconPath}|g" apache_site.conf
 sed -i "s|{{{ServiceUser}}}|${ServiceUser}|g" apache_site.conf
 
+error404handle=""
+
+if [ -z ${Custom404PagePath} ]
+  then
+    printf "${RED}[**]${NC}No custom 404 page was given, ${HIGHLIGHT}Using Default Apache 404 Page${NC}"
+else
+    printf "${RED}[**]${NC}Using ${HIGHLIGHT}${Custom404PagePath}${NC} As 404 page"
+    error404handle="ErrorDocument 404 ${Custom404PagePath}"
+fi
+
+sed -i "s|{{{ErorrHandler}}}|${error404handle}|g" apache_site.conf
+
 cp apache_site.conf /etc/apache2/sites-available/${WebsiteName}.conf
 
 sed -i "s|{{{PathToApp}}}|${PathToApp}|g" site.wsgi
