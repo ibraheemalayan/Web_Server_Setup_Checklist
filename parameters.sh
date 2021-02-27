@@ -8,14 +8,14 @@ Processes=2
 Threads=5
 
 # AppFactoryScript is the script that contains the create_app() method that returns Flask App object
-PathToRequirements="/home/user/src/requirements.txt" # the directory that contains the AppFactoryScript
-PathToApp="/home/user/src/" # the directory that contains the AppFactoryScript
+PathToRequirements="/home/ibraheem/src/requirements.txt" # the directory that contains the AppFactoryScript
+PathToApp="/home/ibraheem/src/" # the directory that contains the AppFactoryScript
 AppFactoryScriptName="init.py" # Name of the AppFactoryScript file
 
 # without trailing slash !!!
 # write it like this /home/user/static not like /home/user/static/
-StaticDirPath="/home/user/src/static"
+StaticDirPath="/home/ibraheem/src/static"
 
-RobotsFilePath="/home/user/src/robots.txt"
-FaviconPath="/home/user/src/favicon.ico"
+RobotsFilePath="/home/ibraheem/src/robots.txt"
+FaviconPath="/home/ibraheem/src/favicon.ico"
 
