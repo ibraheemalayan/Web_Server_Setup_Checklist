@@ -49,6 +49,12 @@ printf "${RED}[<>]${NC} -- ${HIGHLIGHT}mkdir /var/www/${WebsiteName}/static\n${N
 mkdir /var/www/${WebsiteName}
 mkdir /var/www/${WebsiteName}/static
 
+printf "${RED}[-]${NC} -- ${HIGHLIGHT}copying static files, robots.txt and favicon.ico...\n${NC}"
+printf "${RED}[<>]${NC} -- ${HIGHLIGHT}cp -r ${StaticDirPath}/ /var/www/${WebsiteName}/static\n${NC}"
+cp -r ${StaticDirPath}/ /var/www/${WebsiteName}/static
+cp ${RobotsFilePath} /var/www/${WebsiteName}/static/
+cp ${FaviconPath} /var/www/${WebsiteName}/static/
+
 # Create and copy configuration files
 printf "${RED}[-]${NC} -- ${HIGHLIGHT}Creating config files ...\n${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}source fill_configs.sh\n${NC}"
