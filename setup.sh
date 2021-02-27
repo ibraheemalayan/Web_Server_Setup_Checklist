@@ -54,9 +54,10 @@ printf "${RED}[-]${NC} -- ${HIGHLIGHT}Creating config files ...\n${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}source fill_configs.sh\n${NC}"
 source fill_configs.sh
 
-printf "${RED}[-]${NC} -- ${HIGHLIGHT}Enabling ${WebsiteName} apache website\n${NC}"
+printf "${RED}[-]${NC} -- ${HIGHLIGHT}Enabling ${WebsiteName} apache website (after disabling default)\n${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}sudo a2ensite ${WebsiteName}\n${NC}"
 a2ensite ${WebsiteName}
+a2dissite "000-default.conf"
 
 printf "${RED}[-]${NC} -- ${HIGHLIGHT}Restarting apache ...\n${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}sudo systemctl restart apache2.service\n${NC}"
