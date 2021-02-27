@@ -14,8 +14,8 @@ AppFactoryScriptName="init.py" # Name of the AppFactoryScript file
 
 # without trailing slash !!!
 # write it like this /home/user/static not like /home/user/static/
-StaticDirPath="some path"
+StaticDirPath="/home/user/src/static"
 
-RobotsFilePath=""
-FaviconPath=""
+RobotsFilePath="/home/user/src/robots.txt"
+FaviconPath="/home/user/src/favicon.ico"
 
