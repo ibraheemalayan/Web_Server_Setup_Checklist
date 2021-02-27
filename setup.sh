@@ -51,7 +51,7 @@ mkdir /var/www/${WebsiteName}/static
 
 printf "${RED}[-]${NC} -- ${HIGHLIGHT}copying static files, robots.txt and favicon.ico...\n${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}cp -r ${StaticDirPath}/ /var/www/${WebsiteName}/static\n${NC}"
-cp -r ${StaticDirPath}/ /var/www/${WebsiteName}/static
+cp -r ${StaticDirPath}/ /var/www/${WebsiteName}
 cp ${RobotsFilePath} /var/www/${WebsiteName}/static/
 cp ${FaviconPath} /var/www/${WebsiteName}/static/
 
