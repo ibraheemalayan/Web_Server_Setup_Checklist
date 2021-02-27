@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source parameters.sh
+
 sed -i "s/{{{WebsiteName}}}/${WebsiteName}/g" apache_site.conf
 sed -i "s/{{{DomainName}}}/${DomainName}/g" apache_site.conf
 sed -i "s/{{{LimitRequestBody}}}/${LimitRequestBody}/g" apache_site.conf
