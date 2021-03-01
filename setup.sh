@@ -55,6 +55,10 @@ cp -r ${StaticDirPath}/ /var/www/${WebsiteName}
 cp ${RobotsFilePath} /var/www/${WebsiteName}/static/
 cp ${FaviconPath} /var/www/${WebsiteName}/static/
 
+printf "${RED}[-]${NC} -- ${HIGHLIGHT}creating a static update script named (update_static.sh)...\n${NC}"
+printf "${RED}[<>]${NC} -- ${HIGHLIGHT}echo "cp -r ${StaticDirPath}/ /var/www/${WebsiteName}" > update_static.sh \n${NC}"
+echo "cp -r ${StaticDirPath}/ /var/www/${WebsiteName}" > update_static.sh
+
 # Create and copy configuration files
 printf "${RED}[-]${NC} -- ${HIGHLIGHT}Creating config files ...\n${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}source fill_configs.sh\n${NC}"
