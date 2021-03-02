@@ -28,16 +28,24 @@ printf "${RED}[<>]${NC} -- ${HIGHLIGHT}apt -y upgrade\n${NC}"
 apt -y upgrade
 
 printf "${RED}[-]${NC} -- ${HIGHLIGHT}installing required apt packages ...\n${NC}"
-printf "${RED}[<>]${NC} -- ${HIGHLIGHT}apt install -y apache2 python3-pip libapache2-mod-wsgi-py3 python3-dev\n${NC}"
-apt install -y apache2 python3-pip libapache2-mod-wsgi-py3 python3-dev
+printf "${RED}[<>]${NC} -- ${HIGHLIGHT}apt install -y apache2 python3-pip libapache2-mod-wsgi-py3 python3-dev apache2-utils\n${NC}"
+apt install -y apache2 python3-pip libapache2-mod-wsgi-py3 python3-dev apache2-utils
 
 printf "${RED}[-]${NC} -- ${HIGHLIGHT}installing required pip packages ...\n${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}pip3 install -r ${PathToRequirements}\n${NC}"
 pip3 install -r ${PathToRequirements}
 
-printf "${RED}[-]${NC} -- ${HIGHLIGHT}enabling mod_wsgi for apache ...\n${NC}"
+printf "${RED}[-]${NC} -- ${HIGHLIGHT}enabling apache modules (mod_wsgi, cache, cache_disk)...\n${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}a2enmod wsgi\n${NC}"
 a2enmod wsgi
+printf "${RED}[<>]${NC} -- ${HIGHLIGHT}a2enmod cache\n${NC}"
+a2enmod cache
+printf "${RED}[<>]${NC} -- ${HIGHLIGHT}a2enmod cache_disk\n${NC}"
+a2enmod cache_disk
+printf "${RED}[<>]${NC} -- ${HIGHLIGHT}a2enmod expires\n${NC}"
+a2enmod expires
+printf "${RED}[<>]${NC} -- ${HIGHLIGHT}a2enmod headers\n${NC}"
+a2enmod headers
 
 printf "${RED}[-]${NC} -- ${HIGHLIGHT}enabling apache service...\n${NC}"
 printf "${RED}[<>]${NC} -- ${HIGHLIGHT}systemctl enable apache2\n${NC}"
