@@ -6,4 +6,4 @@ a repositary containg scripts and ToDo lists for setting and securing a web serv
 * how to use in readme    
 * automatic domain setup    
 * automatic certificate with certbot    
-* 
+
