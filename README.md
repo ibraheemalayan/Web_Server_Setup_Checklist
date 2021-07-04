@@ -7,3 +7,4 @@ a repositary containg scripts and ToDo lists for setting and securing a web serv
 * automatic domain setup    
 * automatic certificate with certbot    
 
+ 
